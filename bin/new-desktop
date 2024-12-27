@@ -1,0 +1,6 @@
+#!/bin/sh
+dest="$HOME/.local/share/applications/$1.desktop"
+cp ~/.config/my/firefox-app-template.desktop "$dest"
+chmod +x "$dest"
+sed -i "s/NAME/$1/" "$dest"
+nvim "$dest"
