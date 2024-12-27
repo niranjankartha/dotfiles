@@ -1,0 +1,5 @@
+#!/bin/sh
+sleep 1
+wp=$(find ~/Pictures/wallpaper/desktop-bg -type f | shuf -n 1)
+hyprctl hyprpaper preload "$wp"
+hyprctl hyprpaper wallpaper ",$wp"
