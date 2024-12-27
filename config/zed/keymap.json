@@ -7,18 +7,10 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "Editor && vim_mode == normal || ProjectPanel && not_editing",
     "bindings": {
-      "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "vim_mode == normal",
-    "bindings": {
-      "space space": "file_finder::Toggle",
+      "shift shift": "file_finder::Toggle",
       "space o": ["projects::OpenRecent", { "create_new_window": true }],
-      "tab": "pane::ActivateNextItem",
-      "shift-tab": "pane::ActivatePrevItem",
       "space w": null,
       "space w left": ["workspace::ActivatePaneInDirection", "Left"],
       "space w right": ["workspace::ActivatePaneInDirection", "Right"],
@@ -51,55 +43,43 @@
       "space w ctrl-p": "workspace::ActivatePreviousPane",
       "space w shift-w": "workspace::ActivatePreviousPane",
       "space w ctrl-shift-w": "workspace::ActivatePreviousPane",
+      "space w e": "project_panel::ToggleFocus",
+      "space w t": "workspace::ToggleBottomDock",
+      "space w i": "workspace::ToggleRightDock",
+      "space w c": "workspace::CloseAllDocks",
+      "alt-x": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePrevItem",
       "space w v": "pane::SplitLeft",
       "space w ctrl-v": "pane::SplitLeft",
       "space w s": "pane::SplitUp",
       "space w shift-s": "pane::SplitUp",
       "space w ctrl-s": "pane::SplitUp",
-      "space w c": "pane::CloseAllItems",
-      "space w ctrl-c": "pane::CloseAllItems",
       // "space w q": "pane::CloseAllItems",
-      "space w q": ["pane::CloseActiveItem", { "saveIntent": "skip" }],
       "space w shift-q": "pane::ReopenClosedItem",
       "space w ctrl-q": "pane::CloseAllItems",
-      "space w o": "workspace::CloseInactiveTabsAndPanes",
+      "space w q": ["pane::CloseActiveItem", { "saveIntent": "skip" }],
       "space w ctrl-o": "workspace::CloseInactiveTabsAndPanes",
-      "space w n": ["workspace::NewFileInDirection", "Up"],
-      "space w ctrl-n": ["workspace::NewFileInDirection", "Up"],
+      // "space w n": ["workspace::NewFileInDirection", "Up"],
+      // "space w ctrl-n": ["workspace::NewFileInDirection", "Up"],
       "space w d": "editor::GoToDefinitionSplit",
       "space w g d": "editor::GoToDefinitionSplit",
       "space w shift-d": "editor::GoToTypeDefinitionSplit",
       "space w g shift-d": "editor::GoToTypeDefinitionSplit",
       "space w space": "editor::OpenExcerptsSplit",
-      "space w g space": "editor::OpenExcerptsSplit",
-      "space w e": "project_panel::ToggleFocus"
+      "space w g space": "editor::OpenExcerptsSplit"
     }
   },
   {
-    "context": "vim_mode == insert",
+    "context": "Editor && vim_mode == insert",
     "bindings": {
       "ctrl-q": null,
       "ctrl-,": "editor::ShowSignatureHelp"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-    }
-  },
-
-  {
-    // netrw compatibility
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      "space w h": ["workspace::ActivatePaneInDirection", "Left"],
-      "space w l": ["workspace::ActivatePaneInDirection", "Right"],
-      "space w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "space w j": ["workspace::ActivatePaneInDirection", "Down"],
-      "space w w": "workspace::ActivateNextPane",
-      "space w p": "workspace::ActivatePreviousPane",
-      "space w e": "project_panel::ToggleFocus"
     }
   }
 ]
