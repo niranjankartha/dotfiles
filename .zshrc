@@ -70,7 +70,7 @@ ZSH_THEME="candy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode)
+plugins=(git vi-mode fzf zsh-autosuggestions)
 VI_MODE_SET_CURSOR=true
 
 source $ZSH/oh-my-zsh.sh
@@ -138,9 +138,9 @@ alias pacrc='sudo paccache -ruk0 && sudo paccache -r && sudo paccache -rk1 -i li
 alias jc="sudo journalctl"
 alias vim="nvim"
 alias x="exit"
-alias fok="(alacritty &)"
+alias fok="(qterminal &)"
 alias cls="tput reset"
-alias diskusage="du -h --max-depth=1 --exclude ./home --exclude ./sys --exclude ./proc --exclude ./hdd-home --exclude ./run 2> /dev/null | sort -h"
+alias diskusage="du -h --max-depth=1 --exclude ./home --exclude ./sys --exclude ./proc --exclude ./old-home --exclude ./run 2> /dev/null | sort -h"
 alias diskusage-txt="diskusage > diskusage.txt && less diskusage.txt"
 alias tw="sudo dmesg -Tw"
 alias bt="sudo systemctl start bluetooth"
@@ -153,3 +153,6 @@ alias pa="ping -c 3 8.8.8.8"
 alias power_now="cat /sys/class/power_supply/BAT0/power_now"
 alias prime-run="switcherooctl launch -g 0"
 alias bt="sudo systemctl start bluetooth"
+alias em="emacsclient -nc"
+alias l="ls -lah --color=always | less"
+

@@ -81,5 +81,12 @@
       "ctrl-q": null,
       "ctrl-,": "editor::ShowSignatureHelp"
     }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "i": "project_panel::NewFile"
+    }
   }
 ]

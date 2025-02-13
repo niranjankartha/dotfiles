@@ -7,6 +7,8 @@ path_map = {
     ".config/my": "~/.config/my",
     ".config/waybar": "~/.config/waybar",
     ".config/zed": "~/.config/zed",
+    ".config/rofi": "~/.config/rofi",
+    ".config/rofi/themes": "~/.local/share/rofi/themes",
     "bin": "~/bin",
     ".zshrc": "~/.zshrc",
 };
@@ -19,6 +21,9 @@ def copy_if_newer(src: str, dst: str):
     if os.path.isfile(src):
         shutil.copyfile(src, dst)
         return
+
+    if not os.path.exists(dst):
+        os.makedirs(dst)
 
     for child in os.listdir(src):
         copy_if_newer(f"{src}/{child}", f"{dst}/{child}")

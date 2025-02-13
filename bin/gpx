@@ -1,0 +1,5 @@
+#!/bin/bash
+filename=$(echo "$1" | sed -E "s/^(.*)\.cpp/\1/")
+g++ -O2 -std=c++20 "$filename.cpp" -o "$filename.out" || exit
+echo "done compiling"
+./"$filename.out"

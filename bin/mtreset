@@ -1,0 +1,5 @@
+#!/bin/sh
+sudo systemctl stop NetworkManager
+sudo modprobe -r mt7921e
+sudo modprobe mt7921e
+sudo systemctl start NetworkManager

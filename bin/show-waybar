@@ -1,0 +1,29 @@
+#!/bin/sh
+lockdir=/tmp/waybar-hide.lock
+
+mkdir "$lockdir" || exit 0
+
+if [ ! -f "/tmp/waybar-dispatch-time" ]; then
+    touch /tmp/waybar-dispatch-time
+    killall -SIGUSR1 waybar
+fi
+
+dispatch_time=$(date +%s)
+echo "$dispatch_time" > /tmp/waybar-dispatch-time
+rmdir "$lockdir"
+
+sleep 2
+
+mkdir "$lockdir" || exit 0
+echo "got lock"
+if [ -f "/tmp/waybar-dispatch-time" ]; then
+    current_time=$(cat /tmp/waybar-dispatch-time)
+
+    if [ $current_time -eq $dispatch_time ]; then
+        echo "rmd"
+        rm /tmp/waybar-dispatch-time
+        killall -SIGUSR1 waybar
+    fi
+fi
+
+rmdir "$lockdir"
