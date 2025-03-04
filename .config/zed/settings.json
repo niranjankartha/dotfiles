@@ -7,6 +7,9 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -26,6 +29,9 @@
   "telemetry": {
     "metrics": false,
     "diagnostics": false
+  },
+  "file_types": {
+    "CMake": ["CMakeLists.txt", "cmake"]
   }
   // "formatter": "language_server"
 }
