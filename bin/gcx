@@ -1,0 +1,5 @@
+#!/bin/bash
+filename=$(echo "$1" | sed -E "s/^(.*)\.c/\1/")
+gcc -O2 "$filename.c" -o "$filename.out" || exit
+echo "done compiling"
+./"$filename.out"

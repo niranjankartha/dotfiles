@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pactl set-source-mute @DEFAULT_SOURCE@ toggle
+mute_status=$(pactl get-source-mute @DEFAULT_SOURCE@)
+
+if [[ "$mute_status" =~ "yes" ]]; then
+    notify-send "Microphone" -i "microphone-sensitivity-muted-symbolic" "Muted"
+else
+    notify-send "Microphone" -i "microphone-sensitivity-high-symbolic" "Unmuted"
+fi

@@ -1,0 +1,19 @@
+diff --git a/src/notification.c b/src/notification.c
+index 6a0d4fe..bf8b9d2 100644
+--- a/src/notification.c
++++ b/src/notification.c
+@@ -205,11 +205,11 @@ int notification_cmp(const struct notification *a, const struct notification *b)
+         const struct notification *a_order;
+         const struct notification *b_order;
+         if(settings.sort == SORT_TYPE_UPDATE && settings.origin & ZWLR_LAYER_SURFACE_V1_ANCHOR_BOTTOM){
+-                a_order = b;
+-                b_order = a;
+-        } else {
+                 a_order = a;
+                 b_order = b;
++        } else {
++                a_order = b;
++                b_order = a;
+         }
+ 
+         if(settings.sort == SORT_TYPE_URGENCY_ASCENDING){

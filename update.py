@@ -9,6 +9,7 @@ path_map = {
     ".config/zed": "~/.config/zed",
     ".config/rofi": "~/.config/rofi",
     ".config/rofi/themes": "~/.local/share/rofi/themes",
+    ".config/dunst": "~/.config/dunst",
     "bin": "~/bin",
     ".zshrc": "~/.zshrc",
 };

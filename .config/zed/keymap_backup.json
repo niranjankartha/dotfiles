@@ -32,12 +32,11 @@
       "space w shift-l": "workspace::SwapPaneRight",
       "space w shift-k": "workspace::SwapPaneUp",
       "space w shift-j": "workspace::SwapPaneDown",
-      // "space w g t": "pane::ActivateNextItem",
-      // "space w ctrl-g t": "pane::ActivateNextItem",
-      // "space w g shift-t": "pane::ActivatePreviousItem",
-      // "space w ctrl-g shift-t": "pane::ActivatePreviousItem",
+      "space w g t": "pane::ActivateNextItem",
+      "space w ctrl-g t": "pane::ActivateNextItem",
+      "space w g shift-t": "pane::ActivatePrevItem",
+      "space w ctrl-g shift-t": "pane::ActivatePrevItem",
       // "space w w": "workspace::ActivateNextPane",
-      // "space w ": "git_panel::ToggleFocus",
       "space w w": "workspace::SaveAll",
       "space w ctrl-w": "workspace::ActivateNextPane",
       "space w p": "workspace::ActivatePreviousPane",
@@ -54,8 +53,8 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "shift-h": "pane::ActivatePreviousItem",
-      "shift-l": "pane::ActivateNextItem",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePrevItem",
       "space w v": "pane::SplitLeft",
       "space w ctrl-v": "pane::SplitLeft",
       "space w s": "pane::SplitUp",
@@ -77,8 +76,7 @@
       "space e o": "diagnostics::Deploy",
       "space e e": "diagnostics::Deploy",
       "] e": "editor::GoToDiagnostic",
-      "[ e": "editor::GoToPreviousDiagnostic",
-      "space k q": "vim::Rewrap"
+      "[ e": "editor::GoToPrevDiagnostic"
     }
   },
   {
