@@ -2,6 +2,7 @@
 import os
 import shutil
 
+# repo path : system path
 path_map = {
     ".config/hypr": "~/.config/hypr",
     ".config/my": "~/.config/my",
@@ -12,7 +13,8 @@ path_map = {
     ".config/dunst": "~/.config/dunst",
     "bin": "~/bin",
     ".zshrc": "~/.zshrc",
-};
+    ".config/doom": "~/.config/doom",
+}
 
 def copy_if_newer(src: str, dst: str):
     dst_t = os.path.getmtime(dst) if os.path.exists(dst) else 0
