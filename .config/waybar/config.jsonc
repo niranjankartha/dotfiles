@@ -9,8 +9,8 @@
   // Choose the order of the modules
   "modules-left": [
     "custom/logo1",
-    "custom/logo2",
-    "custom/logo3",
+    // "custom/logo2",
+    // "custom/logo3",
     "hyprland/workspaces",
     "hyprland/submap",
     "hyprland/window",
@@ -157,7 +157,7 @@
     "format-linked": "  {ifname} (No IP)",
     "format-disconnected": "  Disconnected",
     "format-icons": ["", "", ""],
-    "on-click": "qterminal -e nmtui",
+    "on-click": "qterminal -e rescan-and-nmtui",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -191,20 +191,21 @@
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/logo1": {
-    "format": "",
+    // "format": "",
+    "format": "󰣇",
     "tooltip-format": "hi",
     "on-click": "rofi -show drun",
   },
-  "custom/logo2": {
-    "format": "",
-    "tooltip-format": "hi",
-    "on-click": "rofi -show drun",
-  },
-  "custom/logo3": {
-    "format": "",
-    "tooltip-format": "hi",
-    "on-click": "rofi -show drun",
-  },
+  // "custom/logo2": {
+  //   "format": "",
+  //   "tooltip-format": "hi",
+  //   "on-click": "rofi -show drun",
+  // },
+  // "custom/logo3": {
+  //   "format": "",
+  //   "tooltip-format": "hi",
+  //   "on-click": "rofi -show drun",
+  // },
   "custom/power": {
     "format": "⏻ ",
     "tooltip": false,

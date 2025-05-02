@@ -109,24 +109,27 @@ button:hover {
 #custom-logo2,
 #custom-logo3 {
     font-family: "UbuntuMono Nerd Font";
-    padding: 0 3px;
-}
-
-#custom-logo1,
-#custom-logo3 {
+    /* padding: 0 3px; */
+    padding: 0 5px 0 15px;
+    font-size: 1.25em;
     color: #58e1ff;
 }
 
-#custom-logo1 {
-    margin: 0 0 0 10px;
-}
-
-#custom-logo2 {
-    margin: 0 2px 0 0;
-    color: #ffbd00;
-    font-size: 10px;
-    padding-top: 3px;
-}
+/* #custom-logo1, */
+/* #custom-logo3 { */
+/*     color: #58e1ff; */
+/* } */
+/**/
+/* #custom-logo1 { */
+/*     margin: 0 0 0 10px; */
+/* } */
+/**/
+/* #custom-logo2 { */
+/*     margin: 0 2px 0 0; */
+/*     color: #ffbd00; */
+/*     font-size: 10px; */
+/*     padding-top: 3px; */
+/* } */
 
 #battery.charging,
 #battery.plugged,

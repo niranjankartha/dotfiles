@@ -46,6 +46,7 @@ configuration {
 /*	global-kb: false;*/
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
+	combi-hide-mode-prefix: true;
 /*	combi-display-format: "{mode} {text}";*/
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/

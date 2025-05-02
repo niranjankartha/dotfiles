@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "rescanning..."
+nmcli d w r
+nmcli d w l > /dev/null
+nmtui

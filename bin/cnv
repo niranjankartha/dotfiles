@@ -1,0 +1,3 @@
+#!/bin/bash
+filename=$(cat probname)
+nvim -O "$filename.txt" "$filename-out.txt"

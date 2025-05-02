@@ -129,6 +129,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # precmd_functions+=(_fix_cursor)
 
+unsetopt sharehistory
+
 alias termbin="nc termbin.com 9999"
 alias pacs="sudo pacman -S --needed"
 alias pacss="pacman -Ss"
@@ -155,6 +157,7 @@ alias prime-run="switcherooctl launch -g 0"
 alias bt="sudo systemctl start bluetooth"
 alias em="emacsclient -nc"
 alias l="ls -lah --sort=time --color=always | less"
-alias shaktimaan="cd ~/btp/shaktimaan"
+alias shaktimaan="export PATH=\$PATH:/home/arch/.local/share/riscv64/bin; export SHAKTI_SDK=/home/arch/btp/shakti-sdk; cd ~/btp/shaktimaan"
 alias datenow="date \"+%Y-%m-%d_%H%M%S\""
 alias amdzed="amd-run zeditor"
+alias venv="source .venv/bin/activate"

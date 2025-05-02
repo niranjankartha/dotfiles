@@ -1,0 +1,13 @@
+#!/bin/bash
+filename=$(cat probname)
+if [ "$1" == "debug" ]; then
+	g++ -std=c++17 "$filename.cpp" -DDEBUG -o "$filename.out" || exit
+else
+	g++ -std=c++17 "$filename.cpp" -o "$filename.out" || exit
+fi
+echo "done compiling"
+if [[ "$1" == "debug" || "$1" == "nodiff" ]]; then
+	./"$filename.out" < "$filename.txt"
+else
+	./"$filename.out" < "$filename.txt" | diff "$filename-out.txt" -
+fi
