@@ -8,18 +8,22 @@
 // from the command palette
 {
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
-  "assistant": {
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-3-7-sonnet"
     },
     "version": "2"
   },
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "ui_font_size": 13,
+  "buffer_font_size": 12,
   "relative_line_numbers": true,
   "theme": {
     "mode": "dark",

@@ -10,12 +10,12 @@ args = parser.parse_args()
 
 response = requests.get("https://archlinux.org/packages/core/x86_64/linux/json/")
 data = response.json()
+cloud_ver = f"{data['pkgver']}-{data['pkgrel']}"
 
 if args.override:
     kernel_ver = args.override
 else:
     kernel_ver = subprocess.check_output(['pacman', '-Q', 'linux']).decode('utf-8').strip().split()[1]
 
-min_len = min(len(kernel_ver), len(data["pkgver"]))
-if kernel_ver[:min_len] != data["pkgver"][:min_len]:
-    subprocess.run(['notify-send', f"New linux version! Found {data['pkgver']}"])
+if kernel_ver != cloud_ver:
+    subprocess.run(['notify-send', f"New linux version! Found {cloud_ver}"])

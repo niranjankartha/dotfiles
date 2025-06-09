@@ -11,8 +11,8 @@ path_map = {
     ".config/rofi": "~/.config/rofi",
     ".config/rofi/themes": "~/.local/share/rofi/themes",
     ".config/dunst": "~/.config/dunst",
+    ".config/fish": "~/.config/fish",
     "bin": "~/bin",
-    ".zshrc": "~/.zshrc",
     ".config/doom": "~/.config/doom",
 }
 
