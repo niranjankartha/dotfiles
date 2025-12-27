@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "IBM Plex Mono" :size 14 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "Cantarell" :size 16))
+(setq doom-font (font-spec :family "IBM Plex Mono" :size 12 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "Cantarell" :size 14))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -76,6 +76,16 @@
 ;; they are implemented.
 (after! org (setq org-format-latex-options (plist-put org-format-latex-options :scale 0.5)))
 (add-to-list 'exec-path "/home/arch/.opam/cs6225/bin")
+
+(after! alert
+  (setq alert-default-style 'libnotify))
+
+(require 'org-alert)
+
+(after! org-alert
+  (setq org-alert-interval 60
+        org-alert-notify-cutoff 1
+        org-alert-notify-after-event-cutoff 1))
 
 (setq-default fstar-subp-prover-args '("--include" "/home/arch/.opam/cs6225/lib/pulse"))
 

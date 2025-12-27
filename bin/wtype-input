@@ -1,0 +1,10 @@
+#!/usr/bin/fish
+
+echo "what to type:"
+read pass
+
+echo "sleeping for 5 sec"
+sleep 5
+
+wtype "$pass"
+

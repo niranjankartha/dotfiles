@@ -38,12 +38,6 @@
       "space w shift-l": "workspace::SwapPaneRight",
       "space w shift-k": "workspace::SwapPaneUp",
       "space w shift-j": "workspace::SwapPaneDown",
-      // "space w g t": "pane::ActivateNextItem",
-      // "space w ctrl-g t": "pane::ActivateNextItem",
-      // "space w g shift-t": "pane::ActivatePreviousItem",
-      // "space w ctrl-g shift-t": "pane::ActivatePreviousItem",
-      // "space w w": "workspace::ActivateNextPane",
-      // "space w ": "git_panel::ToggleFocus",
       "space w w": "workspace::SaveAll",
       "space w ctrl-w": "workspace::ActivateNextPane",
       "space w p": "workspace::ActivatePreviousPane",
@@ -51,11 +45,15 @@
       "space w shift-w": "workspace::ActivatePreviousPane",
       "space w ctrl-shift-w": "workspace::ActivatePreviousPane",
       "space w e": "project_panel::ToggleFocus",
-      "space w g": "git_panel::ToggleFocus",
       "space w t": "workspace::ToggleBottomDock",
       "space w i": "workspace::ToggleRightDock",
       "space w c": "workspace::CloseAllDocks",
-      "space g c": "git::ExpandCommitEditor"
+      "space g g": "git_panel::ToggleFocus",
+      "space g c": "git::ExpandCommitEditor",
+      "space w a": "agent::ToggleFocus",
+      ",": "editor::Hover",
+      "space g s": "git::ToggleStaged",
+      "space g r": "git::Restore"
     }
   },
   {

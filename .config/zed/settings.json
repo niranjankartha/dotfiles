@@ -7,19 +7,46 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "show_edit_predictions": false,
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": null // "supermaven"
   },
   "agent": {
+    "profiles": {
+      "write": {
+        "name": "Write",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "write",
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "deepseek",
+      "model": "deepseek-chat"
     },
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
-    },
-    "version": "2"
+      "provider": "deepseek",
+      "model": "deepseek-reasoner"
+    }
   },
   "vim_mode": true,
   "ui_font_size": 13,
@@ -28,7 +55,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Catppuccin Mocha (Blur) [Heavy]"
   },
   "telemetry": {
     "metrics": false,
@@ -36,6 +63,20 @@
   },
   "file_types": {
     "CMake": ["CMakeLists.txt", "cmake"]
-  }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "format_on_save": "off"
   // "formatter": "language_server"
 }
