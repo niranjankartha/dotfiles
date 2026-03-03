@@ -47,13 +47,15 @@
       "space w e": "project_panel::ToggleFocus",
       "space w t": "workspace::ToggleBottomDock",
       "space w i": "workspace::ToggleRightDock",
+      "space w a": "agent::ToggleFocus",
       "space w c": "workspace::CloseAllDocks",
+      "space g r": "git::Restore",
+      "space g s": "git::ToggleStaged",
       "space g g": "git_panel::ToggleFocus",
       "space g c": "git::ExpandCommitEditor",
-      "space w a": "agent::ToggleFocus",
+      "space g b": "editor::OpenGitBlameCommit",
+      "space l s p": "editor::RestartLanguageServer",
       ",": "editor::Hover",
-      "space g s": "git::ToggleStaged",
-      "space g r": "git::Restore"
     }
   },
   {

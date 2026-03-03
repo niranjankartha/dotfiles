@@ -7,8 +7,10 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
-  "edit_predictions": {},
   "show_edit_predictions": false,
+  "features": {
+    "edit_prediction_provider": null, // "supermaven"
+  },
   "agent": {
     "profiles": {
       "write": {

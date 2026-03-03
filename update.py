@@ -1,42 +1,31 @@
 #!/usr/bin/env python
 import os
 import shutil
+from pathlib import Path
 
-# repo path : system path
-path_map = {
-    ".config/hypr": "~/.config/hypr",
-    ".config/my": "~/.config/my",
-    ".config/waybar": "~/.config/waybar",
-    ".config/zed": "~/.config/zed",
-    ".config/rofi": "~/.config/rofi",
-    ".config/rofi/themes": "~/.local/share/rofi/themes",
-    ".config/dunst": "~/.config/dunst",
-    ".config/fish": "~/.config/fish",
-    "bin": "~/bin",
-    ".config/doom": "~/.config/doom",
+path_map_src_dst = {
+    "~/.config/hypr": ".config/hypr",
+    "~/.config/my": ".config/my",
+    "~/.config/waybar": ".config/waybar",
+    "~/.config/zed": ".config/zed",
+    "~/.config/rofi": ".config/rofi",
+    "~/.local/share/rofi/themes": ".config/rofi/themes",
+    "~/.config/dunst": ".config/dunst",
+    "~/.config/fish": ".config/fish",
+    "~/.config/doom": ".config/doom",
+    "~/bin": "bin",
 }
-def link_recursive(src: str, dst: str):
-    if os.path.isfile(src):
-        if os.path.exists(dst):
-            os.remove(dst)
-        os.link(src, dst)
-        return
 
-    if not os.path.exists(dst):
-        os.makedirs(dst)
 
-    for child in os.listdir(src):
-        link_recursive(f"{src}/{child}", f"{dst}/{child}")
+def hardlink(src: Path, dst: Path):
+    if dst.exists():
+        print(f"{dst}.unlink()")
+        dst.unlink()
+    print(f"shutil.copytree({src}, {dst}, copy_function=os.link)")
+    shutil.copytree(src, dst, copy_function=os.link)
 
-    for child in os.listdir(dst):
-        if os.path.exists(f"{src}/{child}"):
-            continue
-        dst_child = f"{dst}/{child}"
-        if os.path.isfile(dst_child):
-            os.unlink(dst_child)
-        else:
-            shutil.rmtree(dst_child)
 
-HOME = os.getenv("HOME", "/home/arch")
-for dst in path_map:
-    link_recursive(path_map[dst].replace("~", HOME), dst)
+for src, dst in path_map_src_dst.items():
+    src_path = Path(src).expanduser()
+    dst_path = Path(dst)
+    hardlink(src_path, dst_path)

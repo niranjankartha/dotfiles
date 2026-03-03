@@ -38,3 +38,5 @@ abbr -a cmake-rebuild 'rm -rf build; mkdir build; cd build; cmake .. -DCMAKE_EXP
 abbr -a cmake-build 'cd build; make; cd ..'
 
 abbr --add dotdot --regex '^\.\.+$' --function multicd
+
+fish_vi_key_bindings
