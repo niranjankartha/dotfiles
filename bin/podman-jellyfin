@@ -1,0 +1,16 @@
+#!/bin/bash
+
+podman run \
+       --detach \
+       --label "io.containers.autoupdate=registry" \
+       --name myjellyfin \
+       --publish 8096:8096/tcp \
+       --publish 7359:7359/udp \
+       --rm \
+       --user $(id -u):$(id -g) \
+       --userns keep-id \
+       --volume jellyfin-cache:/cache:Z \
+       --volume jellyfin-config:/config:Z \
+       --mount type=bind,source=$HOME/Videos,destination=/media,ro=true,relabel=private \
+       docker.io/jellyfin/jellyfin:2026032305
+

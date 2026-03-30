@@ -19,8 +19,8 @@ path_map_src_dst = {
 
 def hardlink(src: Path, dst: Path):
     if dst.exists():
-        print(f"{dst}.unlink()")
-        dst.unlink()
+        print(f"shutil.rmtree({dst})")
+        shutil.rmtree(dst)
     print(f"shutil.copytree({src}, {dst}, copy_function=os.link)")
     shutil.copytree(src, dst, copy_function=os.link)
 
