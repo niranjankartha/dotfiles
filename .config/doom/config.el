@@ -77,7 +77,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(defun load-optional (file)
+  (load! file nil t))
+
 (load! "my/keymap.el")
 (load! "my/org.el")
-(load! "my/formal-proof.el")
-
+(load-optional "my/_local_formal-proof.el")
+(load-optional "my/_local_keymap.el")

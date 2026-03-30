@@ -6,6 +6,11 @@
        :nmv
        "e" #'eval-last-sexp))
 
+(map! :leader
+      :nvm
+      :mode 'org-agenda-mode
+      "x s" #'org-save-all-org-buffers)
+
 ;;;; IDE
 (map! :leader
       :nmv
